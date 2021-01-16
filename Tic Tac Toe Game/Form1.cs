@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Tic_Tac_Toe_Game
@@ -18,8 +12,8 @@ namespace Tic_Tac_Toe_Game
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ((checkBox1.Checked ^ checkBox2.Checked) == false){
-                
+            if ((checkBox1.Checked ^ checkBox2.Checked) == false)
+            {
                 MessageBox.Show("Choose only 5 x 5 or 3 x 3!");
                 return;
             }
@@ -45,7 +39,6 @@ namespace Tic_Tac_Toe_Game
         {
             if ((checkBox1.Checked ^ checkBox2.Checked) == false)
             {
-
                 MessageBox.Show("Choose only 5 x 5 or 3 x 3!");
                 return;
             }
@@ -65,7 +58,6 @@ namespace Tic_Tac_Toe_Game
                     newGame.ShowDialog();
                 Visible = true;
             }
-
         }
     }
 }

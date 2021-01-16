@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.Net.Sockets;
+using System.Windows.Forms;
 
 namespace Tic_Tac_Toe_Game
 {
@@ -18,7 +13,7 @@ namespace Tic_Tac_Toe_Game
             MessageReceiver.DoWork += MessageReceiver_DoWork;
             CheckForIllegalCrossThreadCalls = false;
 
-            if(isHost)
+            if (isHost)
             {
                 PlayerChar = 'X';
                 OpponentChar = 'O';
@@ -36,7 +31,7 @@ namespace Tic_Tac_Toe_Game
                     sock = client.Client;
                     MessageReceiver.RunWorkerAsync();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                     Close();
@@ -66,9 +61,9 @@ namespace Tic_Tac_Toe_Game
         private bool CheckState()
         {
             //Horizontals
-            if(button1.Text == button2.Text && button2.Text == button3.Text && button3.Text == button10.Text && button10.Text == button11.Text && button11.Text != "")
+            if (button1.Text == button2.Text && button2.Text == button3.Text && button3.Text == button10.Text && button10.Text == button11.Text && button11.Text != "")
             {
-                if(button1.Text[0] == PlayerChar)
+                if (button1.Text[0] == PlayerChar)
                 {
                     label1.Text = "You Won!";
                     MessageBox.Show("You Won!");
@@ -80,7 +75,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button4.Text == button5.Text && button5.Text == button6.Text && button6.Text == button12.Text && button12.Text == button13.Text && button13.Text != "")
             {
                 if (button4.Text[0] == PlayerChar)
@@ -95,7 +89,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button7.Text == button8.Text && button8.Text == button9.Text && button9.Text == button14.Text && button14.Text == button15.Text && button15.Text != "")
             {
                 if (button7.Text[0] == PlayerChar)
@@ -110,7 +103,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button16.Text == button17.Text && button17.Text == button18.Text && button18.Text == button19.Text && button19.Text == button20.Text && button20.Text != "")
             {
                 if (button16.Text[0] == PlayerChar)
@@ -125,7 +117,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button21.Text == button22.Text && button22.Text == button23.Text && button23.Text == button24.Text && button24.Text == button25.Text && button25.Text != "")
             {
                 if (button21.Text[0] == PlayerChar)
@@ -156,7 +147,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button2.Text == button5.Text && button5.Text == button8.Text && button8.Text == button17.Text && button17.Text == button22.Text && button22.Text != "")
             {
                 if (button2.Text[0] == PlayerChar)
@@ -171,7 +161,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button3.Text == button6.Text && button6.Text == button9.Text && button9.Text == button18.Text && button18.Text == button23.Text && button23.Text != "")
             {
                 if (button3.Text[0] == PlayerChar)
@@ -186,7 +175,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button10.Text == button12.Text && button12.Text == button14.Text && button14.Text == button19.Text && button19.Text == button24.Text && button24.Text != "")
             {
                 if (button10.Text[0] == PlayerChar)
@@ -201,7 +189,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button11.Text == button13.Text && button13.Text == button15.Text && button15.Text == button20.Text && button20.Text == button25.Text && button25.Text != "")
             {
                 if (button11.Text[0] == PlayerChar)
@@ -216,7 +203,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
 
             // Diag
             else if (button1.Text == button5.Text && button5.Text == button9.Text && button9.Text == button19.Text && button19.Text == button25.Text && button25.Text != "")
@@ -233,7 +219,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button11.Text == button12.Text && button12.Text == button9.Text && button9.Text == button17.Text && button17.Text == button21.Text && button21.Text != "")
             {
                 if (button11.Text[0] == PlayerChar)
@@ -250,7 +235,7 @@ namespace Tic_Tac_Toe_Game
             }
 
             //Draw
-            else if(button1.Text != "" && button2.Text != "" && button3.Text != "" && button4.Text != "" && button5.Text != "" && button6.Text != "" && button7.Text != "" && button8.Text != "" && button9.Text != "" && button10.Text != "" && button11.Text != "" && button12.Text != "" && button13.Text != "" && button14.Text != "" && button15.Text != "" && button16.Text != "" && button17.Text != "" && button18.Text != "" && button19.Text != "" && button20.Text != "" && button21.Text != "" && button22.Text != "" && button23.Text != "" && button24.Text != "" && button25.Text != "")
+            else if (button1.Text != "" && button2.Text != "" && button3.Text != "" && button4.Text != "" && button5.Text != "" && button6.Text != "" && button7.Text != "" && button8.Text != "" && button9.Text != "" && button10.Text != "" && button11.Text != "" && button12.Text != "" && button13.Text != "" && button14.Text != "" && button15.Text != "" && button16.Text != "" && button17.Text != "" && button18.Text != "" && button19.Text != "" && button20.Text != "" && button21.Text != "" && button22.Text != "" && button23.Text != "" && button24.Text != "" && button25.Text != "")
             {
                 label1.Text = "It's a draw!";
                 MessageBox.Show("It's a draw!");
@@ -258,6 +243,7 @@ namespace Tic_Tac_Toe_Game
             }
             return false;
         }
+
         private void FreezeBoard()
         {
             button1.Enabled = false;
@@ -395,7 +381,6 @@ namespace Tic_Tac_Toe_Game
                 button24.Text = OpponentChar.ToString();
             if (buffer[0] == 25)
                 button25.Text = OpponentChar.ToString();
-
         }
 
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
@@ -605,7 +590,5 @@ namespace Tic_Tac_Toe_Game
             button25.Text = PlayerChar.ToString();
             MessageReceiver.RunWorkerAsync();
         }
-
     }
-
 }

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Sockets;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Tic_Tac_Toe_Game
@@ -80,7 +75,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button4.Text == button5.Text && button5.Text == button6.Text && button6.Text != "")
             {
                 if (button4.Text[0] == PlayerChar)
@@ -95,7 +89,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button7.Text == button8.Text && button8.Text == button9.Text && button9.Text != "")
             {
                 if (button7.Text[0] == PlayerChar)
@@ -126,7 +119,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button2.Text == button5.Text && button5.Text == button8.Text && button8.Text != "")
             {
                 if (button2.Text[0] == PlayerChar)
@@ -141,7 +133,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button3.Text == button6.Text && button6.Text == button9.Text && button9.Text != "")
             {
                 if (button3.Text[0] == PlayerChar)
@@ -156,7 +147,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button1.Text == button5.Text && button5.Text == button9.Text && button9.Text != "")
             {
                 if (button1.Text[0] == PlayerChar)
@@ -171,7 +161,6 @@ namespace Tic_Tac_Toe_Game
                 }
                 return true;
             }
-
             else if (button3.Text == button5.Text && button5.Text == button7.Text && button7.Text != "")
             {
                 if (button3.Text[0] == PlayerChar)
@@ -196,6 +185,7 @@ namespace Tic_Tac_Toe_Game
             }
             return false;
         }
+
         private void FreezeBoard()
         {
             button1.Enabled = false;
@@ -253,7 +243,6 @@ namespace Tic_Tac_Toe_Game
                 button8.Text = OpponentChar.ToString();
             if (buffer[0] == 9)
                 button9.Text = OpponentChar.ToString();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
